@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS audit_events (
+ id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ actor VARCHAR(100) NOT NULL,
+ request_id VARCHAR(64) NOT NULL,
+ method VARCHAR(16) NOT NULL,
+ path VARCHAR(500) NOT NULL,
+ response_code SMALLINT UNSIGNED NOT NULL,
+ created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ KEY idx_audit_created (created_at),
+ KEY idx_audit_request (request_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;

@@ -1,0 +1,44 @@
+name: 缺陷报告
+description: 报告一个可复现的问题
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请先确认已阅读 [使用手册](https://github.com/acebluewgf/geo-content-hub/blob/main/docs/guide.md)，并且问题可以在最新版本复现。
+        **请不要在 issue 中粘贴真实 Token、数据库密码、服务器地址或生产数据。**
+  - type: textarea
+    id: what
+    attributes:
+      label: 现象
+      description: 你做了什么、期望什么、实际发生了什么
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开 /admin/ 并登录
+        2. 新建文章并保存
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: 侧栏底部版本号，或 /healthz 返回的 version
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: 环境
+      description: 操作系统、Go 版本、MySQL 版本、部署方式（源码 / 二进制 / 容器）
+  - type: textarea
+    id: logs
+    attributes:
+      label: 相关日志
+      description: 请先脱敏（去掉 Token、密码、域名、IP、业务数据）
+      render: text

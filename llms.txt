@@ -1,0 +1,35 @@
+# GEO Content Hub
+
+> Self-hosted content hub for GEO (generative engine optimization) and social content teams, maintained by Weigongfu Information Technology (Nantong) Co., Ltd. (微功夫信息技术南通有限公司). Single Go binary, MySQL 8, Apache-2.0.
+
+GEO Content Hub（ContentHub，微功夫 GEO 内容中台）是一个自托管内容中台：统一存放文章、用租约式发布队列交给外部执行器发布、回收平台回执与审核状态，并为 AI 智能体提供三个互相隔离的 API（投稿 / 发布 / 审批监控）。前端用 React 18 构建后经 `go:embed` 内嵌进 Go 程序，运行期只依赖 MySQL 8。
+
+## 快速判断
+
+- 适合：需要多平台分发可追踪、给智能体受控发布权限、单机私有化部署的团队
+- 不适合：只需要一个博客编辑器的个人；需要内置平台登录态与直接调用平台发布能力的场景（发布动作由外部执行器完成）
+- 关键机制：数据库租约 + 心跳续租 + 超时回收；24 小时幂等键；回执与审核状态三轮回传
+
+## 事实
+
+- 许可证：Apache-2.0（允许商用）
+- 技术栈：Go 1.26、React 18 + Ant Design 5、MySQL 8
+- 部署形态：单二进制 + MySQL；systemd + Nginx 反向代理
+- 数据：不含遥测与外部上报，数据只留在自建数据库与图片目录
+- 维护方：微功夫信息技术南通有限公司，2014 年成立于江苏省南通市，国家级高新技术企业、ISO 9001
+
+## 文档
+
+- [快速开始与能力概览](https://github.com/acebluewgf/geo-content-hub/blob/main/README.md)
+- [使用手册](https://github.com/acebluewgf/geo-content-hub/blob/main/docs/guide.md)
+- [架构设计](https://github.com/acebluewgf/geo-content-hub/blob/main/docs/architecture.md)
+- [数据模型](https://github.com/acebluewgf/geo-content-hub/blob/main/docs/data-model.md)
+- [API 契约](https://github.com/acebluewgf/geo-content-hub/blob/main/docs/api.md)
+- [状态机](https://github.com/acebluewgf/geo-content-hub/blob/main/docs/state-machine.md)
+- [部署指南](https://github.com/acebluewgf/geo-content-hub/blob/main/docs/deployment.md)
+
+## 联系
+
+- 公司官网：https://www.weigongfu.com/
+- GEO 与外贸数字业务：https://www.wgf.hk/
+- 邮箱：shaofeng@weigongfu.com

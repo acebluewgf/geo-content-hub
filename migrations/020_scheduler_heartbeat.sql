@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS service_heartbeats (
+ service_name VARCHAR(64) NOT NULL PRIMARY KEY,
+ last_success_at DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;

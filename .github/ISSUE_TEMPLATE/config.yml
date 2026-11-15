@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全问题
+    url: https://github.com/acebluewgf/geo-content-hub/blob/main/SECURITY.md
+    about: 请勿用公开 issue 报告安全漏洞，按 SECURITY.md 私下联系。
+  - name: 商业支持与定制
+    url: https://www.weigongfu.com/?utm_source=github&utm_medium=issue&utm_campaign=opensource
+    about: 私有化部署、平台对接与定制开发。
